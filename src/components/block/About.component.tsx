@@ -26,7 +26,7 @@ export default function About() {
                     <a href="https://github.com/Rooosss"> GitHub</a>.
                 </p>
             </div>
-            <img className={stylesAbout.about__image} src={aboutImage} alt="About image" />
+            <img className={stylesAbout.about__image} src={aboutImage} alt="About" />
         </section>
     );
 }
