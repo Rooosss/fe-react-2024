@@ -1,13 +1,12 @@
 import AboutComponent from './components/block/About.component.tsx';
 
-import './App.module.css';
-import './components/block/About.css';
+import styles from './App.module.css';
 
 export default function App() {
     return (
         <>
-            <main className="home">
-                <div className="container">
+            <main className={styles.home}>
+                <div className={styles.container}>
                     <AboutComponent />
                 </div>
             </main>
