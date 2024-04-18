@@ -1,7 +1,7 @@
-import AboutComponent from './components/block/About.tsx';
+import AboutComponent from './components/block/About.component.tsx';
 
-import './App.css';
-import './components/block/About.style.css';
+import './App.module.css';
+import './components/block/About.css';
 
 export default function App() {
     return (
