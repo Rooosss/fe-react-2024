@@ -1,4 +1,4 @@
-import aboutImage from '@/image/about-img.svg';
+import aboutImage from '@/image/image-about.png';
 
 import stylesAbout from './About.module.css';
 
