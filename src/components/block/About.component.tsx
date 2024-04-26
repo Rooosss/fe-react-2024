@@ -13,7 +13,9 @@ export default function About() {
                 </p>
                 <p className={stylesAbout.about__text}>
                     This page was page was developed during the course &#39;
-                    <a href="https://www.mastersacademy.education/frontend-react-it">Intro to React</a>
+                    <a className={stylesAbout.about__link} href="https://www.mastersacademy.education/frontend-react-it">
+                        Intro to React
+                    </a>
                     &#39; from Masters Academy in 2024.
                 </p>
                 <p className={stylesAbout.about__text}>
@@ -21,9 +23,15 @@ export default function About() {
                     small project for the portfolio.
                 </p>
                 <p className={stylesAbout.about__text}>
-                    You can contact me via
-                    <a href="//t.me/Rohanskyi"> Telegram</a> and check out my
-                    <a href="https://github.com/Rooosss"> GitHub</a>.
+                    You can contact me via{' '}
+                    <a className={stylesAbout.about__link} href="//t.me/Rohanskyi">
+                        Telegram
+                    </a>{' '}
+                    and check out my{' '}
+                    <a className={stylesAbout.about__link} href="https://github.com/Rooosss">
+                        GitHub
+                    </a>
+                    .
                 </p>
             </div>
             <img className={stylesAbout.about__image} src={aboutImage} alt="About" />
