@@ -11,10 +11,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 400;
   color: #111;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a:hover {
@@ -22,8 +36,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  align-items: center;
   min-height: 100vh;
   font-size: 14px;
 }

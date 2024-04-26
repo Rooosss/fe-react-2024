@@ -1,0 +1,121 @@
+.button_default {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #111;
+}
+
+.button_default:focus {
+  outline: none;
+}
+
+.header {
+  background-color: #111;
+}
+
+.header__inner {
+  padding: 17px 52px 17px 53px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header__logo_wrapper {
+  display: flex;
+  height: 46px;
+}
+
+.header__logo_link {
+  margin-right: 49px;
+}
+
+.header__cart_button {
+  margin-right: 32px;
+}
+
+.navigation__list {
+  display: none;
+}
+
+.header__login_wrapper {
+  display: none;
+}
+
+.header__theme {
+  display: none;
+}
+
+@media (min-width: 805px) {
+
+  .header__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__login_wrapper {
+    display: flex;
+    gap: 10px;
+  }
+
+  .header__login_button,
+  .header__signup_button {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 40px;
+    font-size: 16px;
+  }
+
+  .header__login_button {
+    background-color: #333;
+  }
+
+  .header__signup_button {
+    background-color: #EF4934;
+  }
+
+  .header__login_button:active {
+    transform: translate(2px, 2px);
+  }
+
+  .header__signup_button:active {
+    transform: translate(2px, 2px);
+  }
+
+  .navigation__list {
+    display: flex;
+    gap: 49px;
+    margin-right: 124px;
+  }
+
+  .navigation__link {
+    color: #FFF;
+    font-size: 16px;
+  }
+
+  .navigation__link:active {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .navigation__link:hover {
+    color: #FFF;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 960px) {
+
+  .header__theme {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+}
