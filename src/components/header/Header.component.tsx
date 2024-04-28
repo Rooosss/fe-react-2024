@@ -8,14 +8,17 @@ import headerThemeLightActive from '@/image/theme-light_active.png';
 
 import styles from './Header.module.css';
 
+const AboutPage = 'About.component.tsx';
+const ProductsPage = '#';
+
 export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.header__container}>
                 <div className={styles.header__inner}>
                     <div className={styles.header__logo_wrapper}>
-                        <a className={styles.header__logo_link} href="#">
-                            <img className={styles.header__logo} src={headerLogo} alt="Logo" />
+                        <a className={styles.header__logo_link} href={AboutPage}>
+                            <img className={styles.header__logo} src={headerLogo} width="40px" height="40px" alt="Logo" />
                         </a>
                         <div className={styles.header__theme}>
                             <button className={`${styles.header__theme_button_light} ${styles.button_default}`}>
@@ -43,12 +46,12 @@ export default function Header() {
                     <nav className={styles.header__navigation}>
                         <ul className={styles.navigation__list}>
                             <li className={styles.navigation__item}>
-                                <a className={styles.navigation__link} href="#">
+                                <a className={styles.navigation__link} href={AboutPage}>
                                     About
                                 </a>
                             </li>
                             <li className={styles.navigation__item}>
-                                <a className={styles.navigation__link} href="#">
+                                <a className={styles.navigation__link} href={ProductsPage}>
                                     Products
                                 </a>
                             </li>
@@ -56,8 +59,13 @@ export default function Header() {
 
                         <button className={`${styles.header__cart_button} ${styles.button_default}`}>
                             <img className={styles.header__cart_icon} src={headerCart} width="24px" height="24px" alt="Cart" />
-                            <span></span>
+                            <span className={styles.header__cart_number}>1</span>
                         </button>
+                        <button className={`${styles.header__burger_button} ${styles.button_default}`}>
+                            <span className={styles.burger__item}></span>
+                            <span className={styles.burger__item}></span>
+                        </button>
+
                         <div className={styles.header__login_wrapper}>
                             <button className={styles.header__login_button}>
                                 <img src={headerSignup} width="24px" height="24px" alt="Login icon" />

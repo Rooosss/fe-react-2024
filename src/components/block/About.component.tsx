@@ -8,8 +8,8 @@ export default function About() {
             <div className={stylesAbout.about__description}>
                 <h1 className={stylesAbout.about__title}>About me</h1>
                 <p className={stylesAbout.about__text}>
-                    Hi! My name is Rostyslav Vyshemirskyi and I&#39;m a Junior Frontend Developer. I am already familiar with main Web
-                    Technologies like React, HTML, CSS, JavaScript and Git version control system.
+                    Hi! My name is Rostyslav and I&#39;m a Junior Frontend Developer. I am already familiar with main Web Technologies like
+                    React, HTML, CSS, JavaScript and Git version control system.
                 </p>
                 <p className={stylesAbout.about__text}>
                     This page was page was developed during the course &#39;

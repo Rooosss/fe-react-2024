@@ -1,3 +1,5 @@
+import FooterComponent from '@/components/footer/Footer.component.tsx';
+
 import AboutComponent from './components/block/About.component.tsx';
 import HeaderComponent from './components/header/Header.component.tsx';
 
@@ -12,6 +14,7 @@ export default function App() {
                     <AboutComponent />
                 </div>
             </main>
+            <FooterComponent />
         </>
     );
 }
