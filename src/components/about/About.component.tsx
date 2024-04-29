@@ -1,6 +1,10 @@
-import aboutImage from '@/image/image-about.png';
+import aboutImage from '@/assets/image/image-about.png';
 
 import stylesAbout from './About.module.css';
+
+const MOCLink = 'https://www.mastersacademy.education/frontend-react-it';
+const TelegramLink = '//t.me/Rohanskyi';
+const GithubLink = 'https://github.com/Rooosss';
 
 export default function About() {
     return (
@@ -13,7 +17,7 @@ export default function About() {
                 </p>
                 <p className={stylesAbout.about__text}>
                     This page was page was developed during the course &#39;
-                    <a className={stylesAbout.about__link} href="https://www.mastersacademy.education/frontend-react-it">
+                    <a className={stylesAbout.about__link} href={MOCLink}>
                         Intro to React
                     </a>
                     &#39; from Masters Academy in 2024.
@@ -24,11 +28,11 @@ export default function About() {
                 </p>
                 <p className={stylesAbout.about__text}>
                     You can contact me via{' '}
-                    <a className={stylesAbout.about__link} href="//t.me/Rohanskyi">
+                    <a className={stylesAbout.about__link} href={TelegramLink}>
                         Telegram
                     </a>{' '}
                     and check out my{' '}
-                    <a className={stylesAbout.about__link} href="https://github.com/Rooosss">
+                    <a className={stylesAbout.about__link} href={GithubLink}>
                         GitHub
                     </a>
                     .
