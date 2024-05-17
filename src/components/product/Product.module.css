@@ -13,13 +13,13 @@
 .product__card {
   width: 275px;
   padding: 17.5px 15px;
-  border: 1px solid #CCC;
+  border: 1px solid var(--bg-hover-dark);
   border-radius: 20px;
   justify-content: center;
 }
 
 .product__card:hover {
-  background-color: #F1F1F1;
+  background-color: var(--bg-hover-light);
   transition: .2s;
 }
 
@@ -73,7 +73,7 @@
   height: 40px;
   border-radius: 50%;
   display: inline-block;
-  border: 5px solid #D43824;
+  border: 5px solid var(--bg-defalt-hover-light);
   border-bottom-color: transparent;
   animation: rotation 1s infinite linear;
 }

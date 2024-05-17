@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import styles from '@/components/product/Product.module.css';
 import ProductCard from '@/components/product/ProductCard.component.tsx';
+import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
 import type Product from '@/interfaces/Products.ts';
 
 interface ProductsListProps {
@@ -38,6 +39,7 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
     } else if (isLoaded) {
         return (
             <section className={styles.product__section}>
+                <SearchBar />
                 <ul className={styles.product__list}>
                     {items.map((item) => (
                         <ProductCard key={item.id} item={item} />
