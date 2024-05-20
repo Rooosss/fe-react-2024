@@ -2,7 +2,7 @@ import styles from './SearchBar.module.css';
 
 export default function SearchBar() {
     return (
-        <section className={styles.section__search}>
+        <div className={styles.section__search}>
             <div className={styles.search__block}>
                 <input className={styles.search__input} type="text" placeholder="Search..." />
                 <button className={styles.search__button}>
@@ -22,37 +22,37 @@ export default function SearchBar() {
                 <button className={styles.filter__button}>Electronics</button>
                 <button className={styles.filter__button}>Shoes</button>
                 <button className={styles.filter__button}>Clothes</button>
+            </div>
 
-                <div className={styles.filter__dropdown}>
+            <div className={styles.filter__dropdown}>
+                <div className={styles.dropdown__menu}>
                     <div className={styles.dropdown__title}>Sort by:</div>
-                    <div className={styles.dropdown__menu}>
-                        <button className={styles.dropdown__button}>
-                            <span className={styles.dropdown__button_title}>Price (Low - High)</span>
-                            <svg
-                                className={styles.dropdown__arrow}
-                                width="18"
-                                height="18"
-                                viewBox="0 0 18 18"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M12 7.5L9 10.5L6 7.5"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
-                        <ul className={styles.dropdown__content}>
-                            <li className={styles.dropdown__element}>Price (High - Low)</li>
-                            <li className={styles.dropdown__element}>Newest</li>
-                            <li className={styles.dropdown__element}>Oldest</li>
-                        </ul>
-                    </div>
+                    <button className={styles.dropdown__button}>
+                        <span className={styles.dropdown__button_title}>Price (Low - High)</span>
+                        <svg
+                            className={styles.dropdown__arrow}
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12 7.5L9 10.5L6 7.5"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
+                    <ul className={styles.dropdown__content}>
+                        <li className={styles.dropdown__element}>Price (High - Low)</li>
+                        <li className={styles.dropdown__element}>Newest</li>
+                        <li className={styles.dropdown__element}>Oldest</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
