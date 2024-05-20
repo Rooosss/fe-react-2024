@@ -28,7 +28,6 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
                 },
             );
     });
-
     if (!isLoaded) {
         return (
             <div className={styles.loader__product}>
@@ -36,18 +35,18 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
                 <div>Loading...</div>
             </div>
         );
-    } else if (isLoaded) {
-        return (
-            <section className={styles.product__section}>
-                <SearchBar />
-                <ul className={styles.product__list}>
-                    {items.map((item) => (
-                        <ProductCard key={item.id} item={item} />
-                    ))}
-                </ul>
-            </section>
-        );
     }
+
+    return (
+        <section className={styles.product__section}>
+            <SearchBar />
+            <ul className={styles.product__list}>
+                {items.map((item) => (
+                    <ProductCard key={item.id} item={item} />
+                ))}
+            </ul>
+        </section>
+    );
 };
 
 export default ProductsList;

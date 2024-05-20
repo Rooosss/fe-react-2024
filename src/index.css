@@ -3,30 +3,39 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: var(--text-default-dark);
-  background-color: var(--text-default-light);
   font-synthesis: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --text-default-light: #FFF;
-  --text-default-dark: #111;
+  --bg-default-white: #FFF;
+  --bg-default-orange: #EF4934;
+  --bg-hover-orange: #D43824;
+  --bg-hover-gray: #585858;
 
-  --text-primary-light: #E1E1E1;
-  --text-primary-dark: #656565;
+  .light-theme {
+    color: #111;
+    background-color: #FFF;
+    --text-default: #111;
+    --text-primary: #333;
+    --text-secondary: #656565;
+    --bg-primary: #FFF;
+    --bg-secondary: #F1F1F1;
+    --bg-dropdown: #FFF;
+    --border-primary: #CCC;
+    --border-secondary: #E1E1E1;
+  }
 
-  --bg-default-light: #FFF;
-  --bg-default-dark: #111;
-
-  --bg-main-light: #EF4934;
-  --bg-main-dark: #333;
-
-  --bg-defalt-hover-light: #D43824;
-  --bg-defalt-hover-dark: #585858;
-
-  --bg-hover-light: #F1F1F1;
-  --bg-hover-dark: #CCC;
+  .dark-theme {
+    --text-default: #FFF;
+    --text-primary: #FFF;
+    --text-secondary: #FFF;
+    --bg-primary: #111;
+    --bg-secondary: #333;
+    --bg-dropdown: #333;
+    --border-primary: #333;
+    --border-secondary: #656565;
+  }
 }
 
 * {
@@ -37,7 +46,7 @@
 
 a {
   font-weight: 400;
-  color: var(--text-default-dark);
+  color: #111;
   text-decoration: none;
 }
 
@@ -46,7 +55,7 @@ ul {
 }
 
 a:hover {
-  color: var(--bg-defalt-hover-dark);
+  color: #111;
 }
 
 body {
@@ -64,7 +73,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--bg-main-dark);
+  background-color: #111;
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -79,15 +88,15 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
 
   :root {
-    color: var(--text-default-dark);
-    background-color: var(--text-default-light);
+    color: #111;
+    background-color: #FFF;
   }
 
   a:hover {
-    color: var(--bg-defalt-hover-dark);
+    color: #111;
   }
 
   button {
-    background-color: var(--bg-main-dark);
+    background-color: #333;
   }
 }

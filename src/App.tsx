@@ -11,6 +11,11 @@ import styles from './App.module.css';
 function App() {
     const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?limit=8&offset=0';
     const [isShowPage, setPage] = useState<string>('About');
+    const [theme, setTheme] = useState('light');
+    const changeTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    };
 
     const handleShowAbout = () => {
         setPage('About');
@@ -22,11 +27,13 @@ function App() {
 
     return (
         <>
-            <Header onShowAbout={handleShowAbout} onShowProducts={handleShowProducts} />
-            <main className={styles.home}>
-                <div className={styles.container}>{isShowPage === 'About' ? <About /> : <ProductsList apiUrl={apiUrl} />}</div>
-            </main>
-            <Footer />
+            <div className={`${theme}-theme`}>
+                <Header onShowAbout={handleShowAbout} onShowProducts={handleShowProducts} showTheme={changeTheme} />
+                <main className={styles.home}>
+                    <div className={styles.container}>{isShowPage === 'About' ? <About /> : <ProductsList apiUrl={apiUrl} />}</div>
+                </main>
+                <Footer />
+            </div>
         </>
     );
 }
