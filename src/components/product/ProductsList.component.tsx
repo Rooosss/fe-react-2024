@@ -28,18 +28,14 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
                 },
             );
     });
-    if (!isLoaded) {
-        return (
-            <div className={styles.loader__product}>
-                <div className={styles.loader__item}></div>
-                <div>Loading...</div>
-            </div>
-        );
-    }
 
     return (
         <section className={styles.product__section}>
             <SearchBar />
+            <div className={styles.loader__product} style={{ display: isLoaded ? 'none' : 'block' }}>
+                <div className={styles.loader__item}></div>
+                <div>Loading...</div>
+            </div>
             <ul className={styles.product__list}>
                 {items.map((item) => (
                     <ProductCard key={item.id} item={item} />

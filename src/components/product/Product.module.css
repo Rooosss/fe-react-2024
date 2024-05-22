@@ -68,7 +68,6 @@
 .loader__product {
   text-align: center;
   margin-top: 20px;
-  display: none;
 }
 
 .loader__item {
@@ -76,7 +75,7 @@
   height: 40px;
   border-radius: 50%;
   display: inline-block;
-  border: 5px solid var(--bg-defalt-hover-light);
+  border: 5px solid var(--bg-default-orange);
   border-bottom-color: transparent;
   animation: rotation 1s infinite linear;
 }
