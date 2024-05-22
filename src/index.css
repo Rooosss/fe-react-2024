@@ -46,7 +46,7 @@
 
 a {
   font-weight: 400;
-  color: #111;
+  color: var(--text-default);
   text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ ul {
 }
 
 a:hover {
-  color: #111;
+  color: var(--bg-default-orange);
 }
 
 body {
@@ -93,7 +93,7 @@ button:focus-visible {
   }
 
   a:hover {
-    color: #111;
+    color: var(--bg-default-orange);
   }
 
   button {
