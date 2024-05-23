@@ -8,7 +8,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --bg-default-grey-two: #333;
+  --bg-default-black: #111;
   --bg-default-white: #FFF;
+  --bg-default-grey: #656565;
   --bg-default-orange: #EF4934;
   --bg-hover-orange: #D43824;
   --bg-hover-gray: #585858;

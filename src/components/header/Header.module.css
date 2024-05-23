@@ -1,5 +1,5 @@
 .header {
-  background-color: #111;
+  background-color: var(--bg-default-black);
   z-index: 1000;
 }
 
@@ -25,22 +25,22 @@
 }
 
 .header__theme_button_light {
-  color: #FFF;
-  background-color: #111;
+  color: var(--bg-default-white);
+  background-color: var(--bg-default-black);
 }
 
 .header__theme_button_dark {
-  color: #656565;
-  background-color: #111;
+  color: var(--bg-default-grey);
+  background-color: var(--bg-default-black);
 }
 
 .header__theme_button_light:hover {
-  color: #FFF;
+  color: var(--bg-default-white);
   transition: .2s;
 }
 
 .header__theme_button_dark:hover {
-  color: #FFF;
+  color: var(--bg-default-white);
   transition: .2s;
 }
 
@@ -54,7 +54,7 @@
   top: 70px;
   right: 0;
   padding: 10px  60px 100px;
-  background-color: #111;
+  background-color: var(--bg-default-black);
   display: none;
 }
 
@@ -65,8 +65,8 @@
 .header__cart_button {
   margin-right: 14px;
   stroke-Width: 1.5;
-  color: #FFF;
-  background-color: #111;
+  color: var(--bg-default-white);
+  background-color: var(--bg-default-black);
 }
 
 .header__cart_button:hover {
@@ -75,13 +75,13 @@
 }
 
 .header__cart_number {
-  color: #FFF;
+  color: var(--bg-default-white);
   font-size: 10px;
   width: 16px;
   height: 16px;
   font-weight: 700;
   border-radius: 50%;
-  background-color: #EF4934;
+  background-color: var(--bg-default-orange);
   display: none;
   align-items: center;
   justify-content: center;
@@ -100,13 +100,13 @@
   align-items: center;
   position: relative;
   cursor: pointer;
-  background-color: #111;
+  background-color: var(--bg-default-black);
 }
 
 .burger__item {
   width: 23px;
   height: 1.5px;
-  background-color: #FFF;
+  background-color: var(--bg-default-white);
   position: absolute;
   left: 3px;
 }
@@ -120,19 +120,19 @@
 }
 
 .navigation__link {
-  color: #FFF;
+  color: var(--bg-default-white);
   font-size: 16px;
-  background-color: #111;
+  background-color: var(--bg-default-black);
 }
 
 .navigation__link:active {
-  color: #FFF;
+  color: var(--bg-default-white);
   font-size: 16px;
   font-weight: 700;
 }
 
 .navigation__link:hover {
-  color: #FFF;
+  color: var(--bg-default-white);
   font-weight: 700;
   transition: .2s;
 }
@@ -186,20 +186,20 @@
   }
 
   .header__login_button {
-    background-color: #333;
+    background-color: var(--bg-default-grey-two);
   }
 
   .header__signup_button {
-    background-color: #EF4934;
+    background-color: var(--bg-default-orange);
   }
 
   .header__login_button:hover {
-    background-color: #585858;
+    background-color: var(--bg-hover-gray);
     transition: .1s;
   }
 
   .header__signup_button:hover {
-    background-color: #D43824;
+    background-color: var(--bg-hover-orange);
     transition: .1s;
   }
 
