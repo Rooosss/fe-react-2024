@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import Pagination from '@/components/product/Pagination.component.tsx';
 import styles from '@/components/product/Product.module.css';
 import ProductCard from '@/components/product/ProductCard.component.tsx';
 import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
@@ -41,6 +42,7 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
                     <ProductCard key={item.id} item={item} />
                 ))}
             </ul>
+            <Pagination />
         </section>
     );
 };
