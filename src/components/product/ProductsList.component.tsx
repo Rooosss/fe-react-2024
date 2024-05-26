@@ -14,6 +14,8 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
     const [items, setItems] = useState<Product[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [productsPerPage] = useState(8);
 
     useEffect(() => {
         fetch(apiUrl)
@@ -30,19 +32,38 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
             );
     });
 
+    const lastProductIndex = currentPage * productsPerPage;
+    const firstProductIndex = lastProductIndex - productsPerPage;
+    const currentProduct = items.slice(firstProductIndex, lastProductIndex);
+
+    const handlePageClick = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const previousPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const nextPage = () => {
+        if (currentPage < items.length / productsPerPage) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
     return (
         <section className={styles.product__section}>
             <SearchBar />
-            <div className={styles.loader__product} style={{ display: isLoaded ? 'none' : 'block' }}>
-                <div className={styles.loader__item}></div>
-                <div>Loading...</div>
-            </div>
-            <ul className={styles.product__list}>
-                {items.map((item) => (
-                    <ProductCard key={item.id} item={item} />
-                ))}
-            </ul>
-            <Pagination />
+            <ProductCard items={currentProduct} isLoaded={isLoaded} />
+            <Pagination
+                handlePageClick={handlePageClick}
+                previousPage={previousPage}
+                nextPage={nextPage}
+                productsPerPage={productsPerPage}
+                currentPage={currentPage}
+                totalProducts={items.length}
+            />
         </section>
     );
 };

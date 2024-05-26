@@ -9,7 +9,7 @@ import ProductsList from './components/product/ProductsList.component.tsx';
 import styles from './App.module.css';
 
 function App() {
-    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?limit=8&offset=0';
+    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?limit=40&offset=10';
     const [isShowPage, setPage] = useState<'About' | 'ProductsList'>('About');
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
     const changeTheme = () => {

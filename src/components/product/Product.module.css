@@ -16,7 +16,9 @@
   padding: 17.5px 15px;
   border: 1px solid var(--border-primary);
   border-radius: 20px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product__card:hover {
@@ -88,6 +90,11 @@
   gap: 5px;
 }
 
+.pagination__page_number {
+  display: flex;
+  gap: 5px;
+}
+
 .page__switch {
   width: 32px;
   height: 32px;
@@ -99,8 +106,14 @@
   &:hover {
     background-color: var(--border-secondary);
   }
+}
 
-  &:disabled {
+.disablePageSwitch {
+  color: var(--border-primary);
+  background-color: var(--disable-button);
+  cursor: default;
+
+  &:hover {
     color: var(--border-primary);
     background-color: var(--disable-button);
   }
@@ -122,6 +135,12 @@
 .activeNumberPage {
   color: var(--bg-default-white);
   background-color: var(--bg-default-orange);
+
+  &:hover {
+    cursor: default;
+    color: var(--bg-default-white);
+    background-color: var(--bg-default-orange);
+  }
 }
 
 @keyframes rotation {

@@ -69,14 +69,14 @@
   &:hover {
     color: var(--bg-default-white);
     background-color: var(--bg-default-orange);
-    border: none;
-    transition: .2s;
+    border: 1px solid var(--bg-default-orange);
+    transition: .3s;
   }
 
   &:active {
     color: var(--bg-default-white);
     background-color: var(--bg-default-orange);
-    border: none;
+    border: 1px solid var(--bg-default-orange);
   }
 
   &:nth-child(3) {
@@ -128,8 +128,8 @@
     color: var(--bg-default-white);
     background-color: var(--bg-default-orange);
     font-weight: 600;
-    border: none;
-    transition: .2s;
+    border: 1px solid var(--bg-default-orange);
+    transition: .3s;
     width: 196px;
   }
 }
