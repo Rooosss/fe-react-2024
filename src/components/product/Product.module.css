@@ -106,16 +106,16 @@
   &:hover {
     background-color: var(--border-secondary);
   }
-}
 
-.disablePageSwitch {
-  color: var(--border-primary);
-  background-color: var(--disable-button);
-  cursor: default;
-
-  &:hover {
+  &:disabled {
     color: var(--border-primary);
     background-color: var(--disable-button);
+    cursor: default;
+
+    &:hover {
+      color: var(--border-primary);
+      background-color: var(--disable-button);
+    }
   }
 }
 

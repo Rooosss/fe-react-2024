@@ -19,7 +19,7 @@ const Pagination: React.FC<PropsPaginate> = ({ productsPerPage, currentPage, tot
 
     return (
         <div className={styles.pagination__page}>
-            <button className={`${styles.page__switch} ${currentPage === 1 ? styles.disablePageSwitch : ''}`} onClick={previousPage}>
+            <button className={styles.page__switch} onClick={previousPage} disabled={currentPage <= 1}>
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M6.25016 7.91671L3.3335 5.00004L6.25016 2.08337"
@@ -41,10 +41,7 @@ const Pagination: React.FC<PropsPaginate> = ({ productsPerPage, currentPage, tot
                     </button>
                 ))}
             </div>
-            <button
-                className={`${styles.page__switch} ${currentPage === totalProducts / productsPerPage ? styles.disablePageSwitch : ''}`}
-                onClick={nextPage}
-            >
+            <button className={styles.page__switch} onClick={nextPage} disabled={currentPage >= totalProducts / productsPerPage}>
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M3.75 2.08337L6.66667 5.00004L3.75 7.91671"
