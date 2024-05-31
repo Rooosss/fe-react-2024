@@ -6,14 +6,12 @@ import ProductCard from '@/components/product/ProductCard.component.tsx';
 import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
 import type Product from '@/interfaces/Products.ts';
 
-interface ProductsListProps {
-    apiUrl: string;
-}
-
-const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
+export default function ProductsList() {
+    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products';
     const [items, setItems] = useState<Product[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
+
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(8);
 
@@ -52,9 +50,17 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
         }
     };
 
+    const choseCategory = (categoryItem: string) => {
+        const updateItems = items.filter((item) => item.category.name === categoryItem);
+        setItems(updateItems);
+        if (categoryItem === '') {
+            setItems(items);
+        }
+    };
+
     return (
         <section className={styles.product__section}>
-            <SearchBar />
+            <SearchBar choseCategory={choseCategory} />
             <ProductCard items={currentProduct} isLoaded={isLoaded} />
             <Pagination
                 handlePageClick={handlePageClick}
@@ -66,6 +72,4 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
             />
         </section>
     );
-};
-
-export default ProductsList;
+}

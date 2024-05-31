@@ -45,7 +45,7 @@
   align-items: center;
 
   &:hover {
-    background-color: var(--bg-default-orange);
+    background-color: var(--bg-hover-orange);
     transition: .2s;
   }
 }
@@ -73,15 +73,15 @@
     transition: .3s;
   }
 
-  &:active {
-    color: var(--bg-default-white);
-    background-color: var(--bg-default-orange);
-    border: 1px solid var(--bg-default-orange);
-  }
-
   &:nth-child(3) {
     margin-right: 29px;
   }
+}
+
+.activeFilterButton {
+  color: var(--bg-default-white);
+  background-color: var(--bg-default-orange);
+  border: 1px solid var(--bg-default-orange);
 }
 
 .dropdown__menu {
@@ -104,14 +104,11 @@
   width: 261px;
 }
 
-.dropdown__button_title {
-  font-size: 14px;
-}
-
 .dropdown__button {
   position: relative;
   z-index: 3;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   color: var(--text-secondary);
   font-weight: 600;

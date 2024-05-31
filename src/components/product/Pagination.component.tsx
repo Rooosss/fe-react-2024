@@ -13,7 +13,7 @@ interface PropsPaginate {
 const Pagination: React.FC<PropsPaginate> = ({ productsPerPage, currentPage, totalProducts, handlePageClick, previousPage, nextPage }) => {
     const pageNumbers = [];
 
-    for (let index = 1; index <= totalProducts / productsPerPage; index++) {
+    for (let index = 1; index <= Math.ceil(totalProducts / productsPerPage); index++) {
         pageNumbers.push(index);
     }
 

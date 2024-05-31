@@ -9,7 +9,6 @@ import ProductsList from './components/product/ProductsList.component.tsx';
 import styles from './App.module.css';
 
 function App() {
-    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?limit=40&offset=10';
     const [isShowPage, setPage] = useState<'About' | 'ProductsList'>('About');
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
     const changeTheme = () => {
@@ -36,7 +35,7 @@ function App() {
                     isShowPage={isShowPage}
                 />
                 <main className={styles.home}>
-                    <div className={styles.container}>{isShowPage === 'About' ? <About /> : <ProductsList apiUrl={apiUrl} />}</div>
+                    <div className={styles.container}>{isShowPage === 'About' ? <About /> : <ProductsList />}</div>
                 </main>
                 <Footer />
             </div>
