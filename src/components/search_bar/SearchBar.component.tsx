@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import searchProductIcon from '@/assets/icons/search-product-icon.svg';
 
 import styles from './SearchBar.module.css';
 
 interface CategoryProps {
-    choseCategory: any;
+    onShowCategory: (categoryItem: string) => void;
+    onChangeSort: (activeIndex: number) => void;
+    sortType: number;
 }
 
-const SearchBar: React.FC<CategoryProps> = ({ choseCategory }) => {
-    const list = ['Price (High - Low)', 'Price (Low - High)', 'Newest', 'Oldest'];
+const SearchBar: React.FC<CategoryProps> = ({ onShowCategory, onChangeSort, sortType }) => {
     const categories = ['Electronics', 'Shoes', 'Clothes'];
+    const list = ['Price (High - Low)', 'Price (Low - High)', 'Newest', 'Oldest'];
+    const [isOpenItem, setOpenItem] = useState<boolean>(false);
+    const sortName = list[sortType];
+
+    const onClickListItem = (activeIndex: number) => {
+        onChangeSort(activeIndex);
+        setOpenItem(false);
+    };
 
     return (
         <div className={styles.section__search}>
@@ -24,9 +33,9 @@ const SearchBar: React.FC<CategoryProps> = ({ choseCategory }) => {
             <div className={styles.filter__block}>
                 {categories.map((category: any, index: number) => (
                     <button
-                        className={`${styles.filter__button} ${category ? styles.activeFilterButton : ''}`}
+                        className={`${styles.filter__button} ${category === category[index] ? styles.activeFilterButton : ''}`}
                         key={index}
-                        onClick={() => choseCategory(category)}
+                        onClick={() => onShowCategory(category)}
                     >
                         {category}
                     </button>
@@ -36,8 +45,11 @@ const SearchBar: React.FC<CategoryProps> = ({ choseCategory }) => {
             <div className={styles.filter__dropdown}>
                 <div className={styles.dropdown__menu}>
                     <div className={styles.dropdown__title}>Sort by:</div>
-                    <button className={styles.dropdown__button}>
-                        <span>Price (High - Low)</span>
+                    <button
+                        className={`${styles.dropdown__button} ${isOpenItem ? styles.dropDownButtonOpen : ''}`}
+                        onClick={() => setOpenItem(!isOpenItem)}
+                    >
+                        {sortName}
                         <svg
                             className={styles.dropdown__arrow}
                             width="18"
@@ -55,13 +67,19 @@ const SearchBar: React.FC<CategoryProps> = ({ choseCategory }) => {
                             />
                         </svg>
                     </button>
-                    <ul className={styles.dropdown__content}>
-                        {list.map((item, index) => (
-                            <li key={index} className={styles.dropdown__element}>
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
+                    {isOpenItem && (
+                        <ul className={styles.dropdown__content}>
+                            {list.map((element, index) => (
+                                <li
+                                    key={index}
+                                    onClick={() => onClickListItem(index)}
+                                    className={`${styles.dropdown__element} ${sortType === index ? styles.dropDownItemActive : ''}`}
+                                >
+                                    {element}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
             </div>
         </div>

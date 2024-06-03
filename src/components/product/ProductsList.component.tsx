@@ -7,13 +7,15 @@ import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
 import type Product from '@/interfaces/Products.ts';
 
 export default function ProductsList() {
-    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products';
+    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?category&name=Shoes';
     const [items, setItems] = useState<Product[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
 
     const [currentPage, setCurrentPage] = useState(1);
     const [productsPerPage] = useState(8);
+    const [sortType, setSortType] = useState(0);
+    const [currentItems, setCurrentItems] = useState<Product[]>([]);
 
     useEffect(() => {
         fetch(apiUrl)
@@ -32,7 +34,7 @@ export default function ProductsList() {
 
     const lastProductIndex = currentPage * productsPerPage;
     const firstProductIndex = lastProductIndex - productsPerPage;
-    const currentProduct = items.slice(firstProductIndex, lastProductIndex);
+    const currentProduct = currentItems.slice(firstProductIndex, lastProductIndex);
 
     const handlePageClick = (pageNumber: number) => {
         setCurrentPage(pageNumber);
@@ -50,17 +52,17 @@ export default function ProductsList() {
         }
     };
 
-    const choseCategory = (categoryItem: string) => {
-        const updateItems = items.filter((item) => item.category.name === categoryItem);
-        setItems(updateItems);
+    const onShowCategory = (categoryItem: string) => {
         if (categoryItem === '') {
-            setItems(items);
+            setCurrentItems(items);
+            return;
         }
+        setCurrentItems(items.filter((item) => item.category.name === categoryItem));
     };
 
     return (
         <section className={styles.product__section}>
-            <SearchBar choseCategory={choseCategory} />
+            <SearchBar onShowCategory={onShowCategory} sortType={sortType} onChangeSort={(index) => setSortType(index)} />
             <ProductCard items={currentProduct} isLoaded={isLoaded} />
             <Pagination
                 handlePageClick={handlePageClick}
