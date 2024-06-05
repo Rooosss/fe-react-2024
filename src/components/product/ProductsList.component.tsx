@@ -7,15 +7,16 @@ import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
 import type Product from '@/interfaces/Products.ts';
 
 export default function ProductsList() {
-    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?category&name=Shoes';
+    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products';
     const [items, setItems] = useState<Product[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
 
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState(8);
-    const [sortType, setSortType] = useState(0);
+    const [sortType, setSortType] = useState<number>(0);
     const [currentItems, setCurrentItems] = useState<Product[]>([]);
+    const totalProducts = items.length;
 
     useEffect(() => {
         fetch(apiUrl)
@@ -30,7 +31,7 @@ export default function ProductsList() {
                     setError(error);
                 },
             );
-    });
+    }, [currentPage]);
 
     const lastProductIndex = currentPage * productsPerPage;
     const firstProductIndex = lastProductIndex - productsPerPage;
@@ -47,16 +48,12 @@ export default function ProductsList() {
     };
 
     const nextPage = () => {
-        if (currentPage < items.length / productsPerPage) {
+        if (currentPage < totalProducts / productsPerPage) {
             setCurrentPage(currentPage + 1);
         }
     };
 
     const onShowCategory = (categoryItem: string) => {
-        if (categoryItem === '') {
-            setCurrentItems(items);
-            return;
-        }
         setCurrentItems(items.filter((item) => item.category.name === categoryItem));
     };
 
@@ -70,7 +67,7 @@ export default function ProductsList() {
                 nextPage={nextPage}
                 productsPerPage={productsPerPage}
                 currentPage={currentPage}
-                totalProducts={items.length}
+                totalProducts={totalProducts}
             />
         </section>
     );
