@@ -27,6 +27,8 @@
     --bg-dropdown: #FFF;
     --border-primary: #CCC;
     --border-secondary: #E1E1E1;
+    --bg-hover-primary: #F1F1F1;
+    --disable-button: #F1F1F1;
   }
 
   .dark-theme {
@@ -38,6 +40,8 @@
     --bg-dropdown: #333;
     --border-primary: #333;
     --border-secondary: #656565;
+    --bg-hover-primary: #CCC;
+    --disable-button: #111;
   }
 }
 

@@ -1,5 +1,5 @@
 .product__section {
-  min-height: calc(100vh - 259px);
+  min-height: 100vh;
 }
 
 .product__list {
@@ -16,7 +16,9 @@
   padding: 17.5px 15px;
   border: 1px solid var(--border-primary);
   border-radius: 20px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product__card:hover {
@@ -80,6 +82,67 @@
   animation: rotation 1s infinite linear;
 }
 
+.pagination__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+  gap: 5px;
+}
+
+.pagination__page_number {
+  display: flex;
+  gap: 5px;
+}
+
+.page__switch {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-secondary);
+  border-radius: 8px;
+  color: var(--text-default);
+  background-color: var(--bg-primary);
+
+  &:hover {
+    background-color: var(--border-secondary);
+  }
+
+  &:disabled {
+    color: var(--border-primary);
+    background-color: var(--disable-button);
+    cursor: default;
+
+    &:hover {
+      color: var(--border-primary);
+      background-color: var(--disable-button);
+    }
+  }
+}
+
+.page__number {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-secondary);
+  border-radius: 8px;
+  color: var(--text-default);
+  background-color: var(--bg-primary);
+
+  &:hover {
+    background-color: var(--border-secondary);
+  }
+}
+
+.activeNumberPage {
+  color: var(--bg-default-white);
+  background-color: var(--bg-default-orange);
+
+  &:hover {
+    cursor: default;
+    color: var(--bg-default-white);
+    background-color: var(--bg-default-orange);
+  }
+}
+
 @keyframes rotation {
 
   0% {
@@ -101,7 +164,7 @@
 @media (min-width: 920px) {
 
   .product__section {
-    padding: 0 30px 30px;
+    padding: 0 30px;
   }
 }
 
