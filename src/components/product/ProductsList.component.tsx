@@ -5,11 +5,8 @@ import ProductCard from '@/components/product/ProductCard.component.tsx';
 import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
 import type Product from '@/interfaces/Products.ts';
 
-interface ProductsListProps {
-    apiUrl: string;
-}
-
-const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
+export default function ProductsList() {
+    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?limit=8&offset=0';
     const [items, setItems] = useState<Product[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
@@ -27,7 +24,7 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
                     setError(error);
                 },
             );
-    });
+    }, [error]);
 
     return (
         <section className={styles.product__section}>
@@ -43,6 +40,4 @@ const ProductsList: React.FC<ProductsListProps> = ({ apiUrl }) => {
             </ul>
         </section>
     );
-};
-
-export default ProductsList;
+}

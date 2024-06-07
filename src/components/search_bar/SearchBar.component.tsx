@@ -1,6 +1,8 @@
 import styles from './SearchBar.module.css';
 
 export default function SearchBar() {
+    const categories = ['Electronics', 'Shoes', 'Clothes'];
+
     return (
         <div className={styles.section__search}>
             <div className={styles.search__block}>
@@ -19,9 +21,11 @@ export default function SearchBar() {
             </div>
 
             <div className={styles.filter__block}>
-                <button className={styles.filter__button}>Electronics</button>
-                <button className={styles.filter__button}>Shoes</button>
-                <button className={styles.filter__button}>Clothes</button>
+                {categories.map((category: any, index: number) => (
+                    <button className={styles.filter__button} key={index}>
+                        {category}
+                    </button>
+                ))}
             </div>
 
             <div className={styles.filter__dropdown}>

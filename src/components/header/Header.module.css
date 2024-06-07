@@ -25,7 +25,7 @@
 }
 
 .header__theme_button_light {
-  color: var(--bg-default-white);
+  color: var(--bg-default-grey);
   background-color: var(--bg-default-black);
 }
 
@@ -42,6 +42,10 @@
 .header__theme_button_dark:hover {
   color: var(--bg-default-white);
   transition: .2s;
+}
+
+.activeTheme {
+  color: var(--bg-default-white);
 }
 
 .header__navigation {
@@ -135,6 +139,10 @@
   color: var(--bg-default-white);
   font-weight: 700;
   transition: .2s;
+}
+
+.activePage {
+  font-weight: 700;
 }
 
 .header__login_wrapper {

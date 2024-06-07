@@ -26,9 +26,8 @@ export default function Header({ onShowAbout, onShowProducts, showTheme, theme, 
                         </a>
                         <div className={styles.header__theme}>
                             <button
-                                className={styles.header__theme_button_light}
+                                className={`${styles.header__theme_button_light} ${theme === 'light' ? styles.activeTheme : ''}`}
                                 onClick={showTheme}
-                                style={{ color: theme === 'light' ? '#FFF' : '#656565' }}
                             >
                                 <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -42,9 +41,8 @@ export default function Header({ onShowAbout, onShowProducts, showTheme, theme, 
                             </button>
                             <img className={styles.header__theme_icon} src={headerThemeElement} alt="Element theme" />
                             <button
-                                className={styles.header__theme_button_dark}
+                                className={`${styles.header__theme_button_dark} ${theme === 'dark' ? styles.activeTheme : ''}`}
                                 onClick={showTheme}
-                                style={{ color: theme === 'dark' ? '#FFF' : '#656565' }}
                             >
                                 <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -64,8 +62,7 @@ export default function Header({ onShowAbout, onShowProducts, showTheme, theme, 
                             <li className={styles.navigation__item}>
                                 <button
                                     onClick={onShowAbout}
-                                    className={styles.navigation__link}
-                                    style={{ fontWeight: isShowPage === 'About' ? 'bold' : 'normal' }}
+                                    className={`${styles.navigation__link} ${isShowPage === 'About' ? styles.activePage : ''}`}
                                 >
                                     About
                                 </button>
@@ -73,8 +70,7 @@ export default function Header({ onShowAbout, onShowProducts, showTheme, theme, 
                             <li className={styles.navigation__item}>
                                 <button
                                     onClick={onShowProducts}
-                                    className={styles.navigation__link}
-                                    style={{ fontWeight: isShowPage === 'ProductsList' ? 'bold' : 'normal' }}
+                                    className={`${styles.navigation__link} ${isShowPage === 'ProductsList' ? styles.activePage : ''}`}
                                 >
                                     Products
                                 </button>
