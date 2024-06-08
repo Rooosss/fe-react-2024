@@ -6,7 +6,7 @@ import SearchBar from '@/components/search_bar/SearchBar.component.tsx';
 import type Product from '@/interfaces/Products.ts';
 
 export default function ProductsList() {
-    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products?limit=8&offset=0';
+    const apiUrl = 'https://ma-backend-api.mocintra.com/api/v1/products';
     const [items, setItems] = useState<Product[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
