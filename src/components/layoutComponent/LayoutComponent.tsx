@@ -5,7 +5,7 @@ import styles from '@/App.module.css';
 import Footer from '@/components/footer/Footer.component.tsx';
 import Header from '@/components/header/Header.component.tsx';
 
-export default function Main() {
+export default function LayoutComponent() {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
     const changeTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
