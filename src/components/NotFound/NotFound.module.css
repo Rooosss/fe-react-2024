@@ -1,0 +1,19 @@
+.notfound__page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  min-height: calc(100vh - 320px);
+  margin-top: 50px;
+}
+
+.main__title {
+  font-size: 26px;
+}
+
+@media (min-width: 600px) {
+
+  .main__title {
+    font-size: 34px;
+  }
+}

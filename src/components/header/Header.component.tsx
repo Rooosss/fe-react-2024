@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import headerLogin from '@/assets/icons/login-icon.svg';
 import headerLogo from '@/assets/icons/main_logo-icon.svg';
@@ -8,27 +9,23 @@ import headerThemeElement from '@/assets/icons/theme_mode_element-icon.svg';
 import styles from './Header.module.css';
 
 interface HeaderProps {
-    onShowAbout: () => void;
-    onShowProducts: () => void;
     showTheme: () => void;
     theme: 'light' | 'dark';
-    isShowPage: 'About' | 'ProductsList';
 }
 
-export default function Header({ onShowAbout, onShowProducts, showTheme, theme, isShowPage }: HeaderProps) {
+export default function Header({ showTheme, theme }: HeaderProps) {
     return (
         <header className={styles.header}>
             <div className={styles.header__container}>
                 <div className={styles.header__inner}>
                     <div className={styles.header__logo_wrapper}>
-                        <a className={styles.header__logo_link} href="/">
+                        <Link className={styles.header__logo_link} to="/">
                             <img className={styles.header__logo} src={headerLogo} width="40px" height="40px" alt="Logo" />
-                        </a>
+                        </Link>
                         <div className={styles.header__theme}>
                             <button
-                                className={styles.header__theme_button_light}
+                                className={`${styles.header__theme_button_light} ${theme === 'light' ? styles.activeTheme : ''}`}
                                 onClick={showTheme}
-                                style={{ color: theme === 'light' ? '#FFF' : '#656565' }}
                             >
                                 <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -42,9 +39,8 @@ export default function Header({ onShowAbout, onShowProducts, showTheme, theme, 
                             </button>
                             <img className={styles.header__theme_icon} src={headerThemeElement} alt="Element theme" />
                             <button
-                                className={styles.header__theme_button_dark}
+                                className={`${styles.header__theme_button_dark} ${theme === 'dark' ? styles.activeTheme : ''}`}
                                 onClick={showTheme}
-                                style={{ color: theme === 'dark' ? '#FFF' : '#656565' }}
                             >
                                 <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -62,22 +58,14 @@ export default function Header({ onShowAbout, onShowProducts, showTheme, theme, 
                     <nav className={styles.header__navigation}>
                         <ul className={styles.navigation__list}>
                             <li className={styles.navigation__item}>
-                                <button
-                                    onClick={onShowAbout}
-                                    className={styles.navigation__link}
-                                    style={{ fontWeight: isShowPage === 'About' ? 'bold' : 'normal' }}
-                                >
+                                <Link className={styles.navigation__link} to="/">
                                     About
-                                </button>
+                                </Link>
                             </li>
                             <li className={styles.navigation__item}>
-                                <button
-                                    onClick={onShowProducts}
-                                    className={styles.navigation__link}
-                                    style={{ fontWeight: isShowPage === 'ProductsList' ? 'bold' : 'normal' }}
-                                >
+                                <Link className={styles.navigation__link} to="products">
                                     Products
-                                </button>
+                                </Link>
                             </li>
                         </ul>
 
